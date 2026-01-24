@@ -123,24 +123,27 @@ Portfolio page
     </div>
 
     <div class="row portfolio-page-break">
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         <!-- Key Features -->
-        <div class="row portfolio-page-features">
-          <h2>Key Features</h2>
-          <h3 class="wow fadeInUp animated rotating-feature cd-headline slide" data-wow-delay="0.4s">
-            <span class="cd-words-wrapper">
-              <b class="is-visible"> <em>Dual-function camera bracket </em> for structural support and passive cooling</b>
-              <b><em>Machined aluminum design</em> with fins to increase surface area for heat transfer</b>
-              <b><em>Thermal and structural performance</em> validated via simulation and physical testing</b>
-            </span>
-          </h3>
+        <div class="portfolio-page-features">
+          <div class="row">
+            <div class="col-12">
+              <h2>Key Features</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h3 class="wow fadeInUp animated rotating-feature cd-headline slide" data-wow-delay="0.4s">
+                <span class="cd-words-wrapper">
+                  <b class="is-visible"> <em>Dual-function camera bracket </em> for structural support and passive cooling</b>
+                  <b><em>Machined aluminum design</em> with fins to increase surface area for heat transfer</b>
+                  <b><em>Thermal and structural performance</em> validated via simulation and physical testing</b>
+                </span>
+              </div>
+            </h3>
+          </div>
         </div>
       </div> 
-      <div class="col-lg-4">
-        <div class="mt-4 mt-lg-0">
-          <img class="img-fluid" src="images/placeholder.png" alt="Camera Lens Caps">
-        </div>
-      </div>
     </div>
 
     <div class="row portfolio-page-content">
@@ -171,7 +174,7 @@ Portfolio page
             <h3>Thermal</h3>
             <ul>
               <li>Bracket must passively cool the heat from the bottom camera</li>
-              <li>Junction temperature must be below 60 °C</li>
+              <li>Junction temperature must not exceed 60 °C</li>
               <li>Bracket must operate from 0-40 °C (tested to 45 °C)</li>
             </ul>
           </div>
@@ -193,7 +196,7 @@ Portfolio page
       </div>
       <div class="col-lg-4">
         <!-- Image -->
-        <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
+        <img class="img-fluid" src="images/thermal-bracket/concept-design.jpg" alt="Concept Design">
       </div>
     </div>
 
@@ -207,23 +210,19 @@ Portfolio page
       <div class="col-lg-6">
         <div class="mt-4 mt-lg-0">
         <h3>Static FEA</h3>
-        <p>I ran a static FEA to evaluate bracket strength under translational loads from the mounted 
-          cameras. The applied loads were based on the camera masses and expected accelerations in 
-          all three axes. The goal was to ensure stresses remained well below the material yield 
-          strength. The simulation showed that the maximum stress was more than 200 orders of magnitude 
-          below yield, indicating that the bracket significantly exceeded the strength requirements.</p>
-          <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
+        <p>I evaluated bracket strength under translational loads from the mounted cameras to verify 
+          stresses remained well below yield. The analysis showed maximum stress far below the material 
+          limit, confirming the bracket significantly exceeded strength requirements.</p>
+          <img class="img-fluid" src="images/thermal-bracket/v1-static-fea.png" alt="Concept Static FEA" style="max-width: 60%;">
       </div>
       </div>
       <div class="col-lg-6">
         <div class="mt-4 mt-lg-0">
         <h3>Frequency FEA</h3>
-        <p>I performed a frequency analysis to check for potential resonance with surrounding vibrations 
-          from other machinery. The bracket was modeled with a remote mass representing the cameras, 
-          and the lowest natural frequency was identified. The target was to keep the resonance above 
-          100 Hz. The analysis showed a lowest mode well above this threshold, confirming that the 
-          bracket would not resonate in the expected operating environment.</p>
-          <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
+        <p>I evaluated the bracket's natural frequencies to check for resonance with surrounding 
+          vibrations. The lowest mode was well above the 100 Hz target, confirming the bracket would 
+          not resonate in the expected operating environment.</p>
+          <img class="img-fluid" src="images/thermal-bracket/v1-freq-fea.png" alt="Concept Frequency FEA" style="max-width: 65%;">
       </div>
       </div>
     </div>
@@ -241,30 +240,26 @@ Portfolio page
 
     <!-- Empirical Thermal Testing -->
     <div class="row portfolio-page-content">
-      <div class="col-lg-4">
-        <!-- Image -->
-        <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
-      </div>
       <div class="col-lg-8">
-        <div class="portfolio-page-right-text">
+        <div class="portfolio-page-left-text">
           <h2>Empirical Thermal Testing</h2>
-          <p>I machined a simplified aluminum bracket and used it to evaluate thermal performance 
-            with the camera powered on. With the camera mounted to the bracket, I measured junction 
-            temperature over time in open air and used this data to determine the thermal time 
-            constant. I then measured junction temperature at that time under worst-case ambient 
-            conditions (45 °C) to estimate steady-state performance. The results showed that the 
-            initial design exceeded the allowable junction temperature, indicating that thermal 
-            requirements were not met.</p>
+          <p>I machined a simplified aluminum bracket and evaluated its thermal performance with the 
+            camera powered on. I measured junction temperature over time in open air to determine 
+            the system's thermal time constant. Because steady-state testing at elevated ambient 
+            conditions risked overheating the system, I tested performance up to a safe temperature 
+            limit and used the thermal time constant to estimate steady-state behavior.</p>
+          <p>The estimated steady-state junction temperature at 45 °C ambient was approximately 
+            61.1 °C, exceeding the 60 °C limit. Based on this result, I redesigned the bracket 
+            to improve passive heat dissipation rather than additional structural stiffness.</p>
         </div>
       </div>
-    </div>
-
-    <!-- Concept Design Review -->
-    <div class="row portfolio-page-content">
-      <div class="col-lg-12">
-        <h2>Concept Design Review</h2>
-          <p>The initial design significantly exceeded strength and vibration requirements but did 
-            not meet thermal limits.</p>
+      <div class="col-lg-2 mb-4 mb-lg-0 align-items-center text-center align-self-center">
+        <h3>Test Setup</h3>
+        <img class="img-fluid" src="images/thermal-bracket/empirical-test-setup.png" alt="Empirical Test Setup">
+      </div>
+      <div class="col-lg-2 align-items-center text-center align-self-center">
+        <h3>Machined Part</h3>
+        <img class="img-fluid" src="images/thermal-bracket/machined-bracket.png" alt="Machined Bracket">
       </div>
     </div>
 
@@ -281,13 +276,17 @@ Portfolio page
         </div>
         <div class="col-lg-4">
         <!-- Image -->
-        <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
+        <img class="img-fluid" src="images/thermal-bracket/heat-sink-design.jpg" alt="Heat Sink Design" style="max-width: 55%;">
       </div>
     </div>
     <div class="row portfolio-page-content">
-      <div class="col-lg-4">
-        <!-- Image -->
-        <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
+      <div class="col-lg-2 mb-4 mb-lg-0 align-items-center text-center">
+        <h3>Static FEA</h3>
+        <img class="img-fluid" src="images/thermal-bracket/v1-static-fea.png" alt="Heat Sink Static FEA">
+      </div>
+      <div class="col-lg-2 mb-4 mb-lg-0 align-items-center text-center">
+        <h3>Frequency FEA</h3>
+        <img class="img-fluid" src="images/thermal-bracket/v2-freq-fea.png" alt="Heat Sink Frequency FEA">
       </div>
       <div class="col-lg-8">
         <div class="portfolio-page-right-text">
@@ -303,31 +302,46 @@ Portfolio page
     <!-- Thermal Modeling -->
     <div class="row portfolio-page-content">
       <div class="col-lg-12">
-        <h2>Thermal Modeling</h2>
+        <h2>Theoretical Thermal Model</h2>
+        <p>I developed a thermal-resistance model to estimate the revised bracket's steady-state 
+          junction temperature, assuming a 7 W heat load dissipated at the back of the camera. 
+          I modeled the system as interface, spreading, and convective thermal resistances between 
+          the camera and ambient air.</p>
+        <p>Using the bracket geometry and an assumed skin temperature, I calculated total thermal 
+          resistance and estimated junction temperature under worst-case ambient conditions. Because 
+          convective resistance depends on skin temperature, I solved the model iteratively to 
+          converge on a steady-state solution.</p>
+        <p>The revised heat sink design reduced total thermal resistance and lowered the predicted 
+          junction temperature to approximately 58.4 °C, within the allowable limit. Applying the 
+          same model to the original concept predicted a junction temperature of approximately 
+          62.1 °C, within 1 °C of the empirical result.</p>
       </div>
     </div>
-    <div class="row portfolio-page-break">
-      <div class="col-lg-6">
-        <div class="mt-4 mt-lg-0">
-        <h3>Theoretical Thermal Model</h3>
-        <p>[...]</p>
-          <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
+    <!-- Fin Assembly -->
+    <div class="row portfolio-page-content">
+      <div class="col-lg-4">
+        <!-- Image -->
+        <img class="img-fluid" src="images/thermal-bracket/thermal-bracket-main.png" alt="Heat Sink Thermal FEA" style="max-width: 80%;">
       </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="mt-4 mt-lg-0">
-        <h3>Thermal FEA</h3>
-        <p>[...]</p>
-          <img class="img-fluid" src="images/placeholder.png" alt="Placeholder">
-      </div>
-      </div>
-    </div>
+      <div class="col-lg-8">
+        <div class="portfolio-page-right-text">
+          <h2>Thermal FEA</h2>
+          <p>I performed a thermal FEA in SolidWorks to validate the revised heat sink design under 
+            worst-case ambient conditions. I applied heat generation at the camera mounting interface 
+            and modeled natural convection on all exposed bracket surfaces. The analysis showed the 
+            surface temperature reached 58.4 °C, further confirming the redesign dissipates the 
+            camera heat effectively.</p> 
+        </div>
+      </div>  
 
     <!-- Results -->
     <div class="row portfolio-page-content">
       <div class="col-lg-12">
         <h2>Results</h2>
-          <p>[...]</p>
+          <p>The redesigned bracket with an integrated heat sink successfully reduced junction 
+            temperature while maintaining the required structural stiffness and vibration performance. 
+            Analytical modeling, thermal FEA, and empirical testing confirmed that the design kept 
+            the camera junction temperature below 60 °C under worst-case ambient conditions.</p>
       </div>
     </div>
 
